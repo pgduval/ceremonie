@@ -1,0 +1,12 @@
+Formulaire #;No de confirmation;Nb d'inscription;Code de frais;Montant ($);Question 1: Numéro de demande d'admission au Cégep (#DA - 7 chiffres);Question 2: Nom du diplômé;Question 3: Prénom du diplômé;Question 4: Programme d'études;Question 5: Je serai présent à la cérémonie;Question 6: Nombre de personnes qui m'accompagneront
+1;1815-000001;1;;8.00;1533728;'Drouin;'Justine;1;1;2
+2;1815-000002;1;;8.00;1411544;'Vallières;'Rosemarie;3;1;2
+3;1815-000003;0;;;1532207;'Vachon;'Mélina;1;1;1
+4;1815-000004;2;;16.00;1532207;'Vachon;'Mélina;1;1;3
+5;1815-000005;2;;16.00;1434727;'Bibeau;'Rosalie;3;1;3
+6;1815-000006;2;;16.00;1533519;'Faucher;'Emmy;1;1;3
+7;1815-000007;1;;8.00;1300406;'Goupil;'Julie;3;1;2
+8;1815-000007;1;;8.00;1341902;'Goupil;'Julie;3;1;2
+9;1815-000007;1;;8.00;12345;'Goupil;'Julie;3;1;2
+9;1815-000007;1;;8.00;1332906;'Goupil;'Julie;3;1;2
+10;1815-000007;1;;8.00;1664334;'Goupil;'Julie;3;1;2
