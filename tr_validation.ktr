@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;10&#x2f;09 14&#x3a;45&#x3a;09.374</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;09 17&#x3a;22&#x3a;34.266</modified_date>
+    <modified_date>2017&#x2f;10&#x2f;15 15&#x3a;35&#x3a;37.657</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -606,6 +606,91 @@
       <to>Stream lookup</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Block 3 2 3</from>
+      <to>Problem Programme</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filtrer Diff Programme</from>
+      <to>Block 3 2 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup 3</from>
+      <to>Filtrer Diff Programme</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Problem DA Non trouves</from>
+      <to>Count</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Count</from>
+      <to>Add constants</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Count 2</from>
+      <to>Add constants 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Problem Centre</from>
+      <to>Count 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Count 3</from>
+      <to>Add constants 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Problem Nom</from>
+      <to>Count 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 2</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 2 2</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Block 2 2</from>
+      <to>Rapport Erreurs</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Block 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Count 4</from>
+      <to>Add constants 2 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DA - Dupliques</from>
+      <to>Count 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 2 2 2</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Block</name>
@@ -633,7 +718,7 @@
     </remotesteps>
     <GUI>
       <xloc>1168</xloc>
-      <yloc>48</yloc>
+      <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -664,7 +749,7 @@
     </remotesteps>
     <GUI>
       <xloc>1168</xloc>
-      <yloc>144</yloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -744,7 +829,7 @@
     </partitioning>
     <steps>
       <step>
-        <name>Problem Centre</name>
+        <name>Problem Programme</name>
         <CopyNr>0</CopyNr>
         </step>
       </steps>
@@ -757,7 +842,7 @@
     </remotesteps>
     <GUI>
       <xloc>576</xloc>
-      <yloc>416</yloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -788,7 +873,38 @@
     </remotesteps>
     <GUI>
       <xloc>784</xloc>
-      <yloc>496</yloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Block 4 2</name>
+    <type>BlockUntilStepsFinish</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <steps>
+      <step>
+        <name>DA - Dupliques</name>
+        <CopyNr>0</CopyNr>
+        </step>
+      </steps>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -828,7 +944,7 @@
     </remotesteps>
     <GUI>
       <xloc>800</xloc>
-      <yloc>112</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -874,7 +990,7 @@
     </remotesteps>
     <GUI>
       <xloc>432</xloc>
-      <yloc>496</yloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -912,7 +1028,7 @@
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <sheetname>DA - Dupliques</sheetname>
+      <sheetname>Problem - DA Dupliques</sheetname>
       <autosizecolums>N</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
@@ -964,7 +1080,181 @@
     </remotesteps>
     <GUI>
       <xloc>928</xloc>
-      <yloc>496</yloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>DA - Dupliques avec ID</name>
+    <type>TypeExitExcelWriterStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <makeSheetActive>N</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A1</startingCell>
+    <appendOmitHeader>N</appendOmitHeader>
+    <appendOffset>0</appendOffset>
+    <appendEmpty>0</appendEmpty>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <appendLines>N</appendLines>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x2f;home&#x2f;elmaster&#x2f;project&#x2f;ceremonie&#x2f;resultat</name>
+      <extention>xlsx</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Problem - DA Dupliques avec ID</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <stream_data>N</stream_data>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <protected_by/>
+      <splitevery>0</splitevery>
+      <if_file_exists>reuse</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <sheet_enabled>N</sheet_enabled>
+      <filename>template.xls</filename>
+      <sheetname/>
+      <hidden>N</hidden>
+    </template>
+    <fields>
+      <field>
+        <name>numero_da</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>nombre_da</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>nom_prenom</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>centre</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dum</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Sort rows 2</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>nombre_da</leftvalue>
+ <function>&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>1</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;</mask></value> </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -999,7 +1289,7 @@
     </remotesteps>
     <GUI>
       <xloc>576</xloc>
-      <yloc>496</yloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1055,9 +1345,21 @@
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>centre</leftvalue>
- <function>&#x3c;&#x3e;</function>
- <rightvalue>centre_1</rightvalue>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>centre</leftvalue>
+   <function>&#x3c;&#x3e;</function>
+   <rightvalue>centre_1</rightvalue>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>type_programme</leftvalue>
+   <function>&#x3c;&#x3e;</function>
+   <rightvalue>type_programme_1</rightvalue>
+   </condition>
+  </conditions>
  </condition>
     </compare>
     <cluster_schema/>
@@ -1104,7 +1406,7 @@
     </remotesteps>
     <GUI>
       <xloc>432</xloc>
-      <yloc>416</yloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1139,7 +1441,7 @@
     </remotesteps>
     <GUI>
       <xloc>432</xloc>
-      <yloc>112</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1203,7 +1505,7 @@
     </remotesteps>
     <GUI>
       <xloc>1040</xloc>
-      <yloc>144</yloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1264,7 +1566,7 @@
     </remotesteps>
     <GUI>
       <xloc>1040</xloc>
-      <yloc>48</yloc>
+      <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1434,6 +1736,17 @@
         <trim_type>both</trim_type>
       </field>
       <field>
+        <name>type_programme</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>50</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
         <name>centre</name>
         <type>String</type>
         <format/>
@@ -1553,7 +1866,7 @@
     </remotesteps>
     <GUI>
       <xloc>672</xloc>
-      <yloc>112</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1619,7 +1932,7 @@
     </remotesteps>
     <GUI>
       <xloc>1328</xloc>
-      <yloc>48</yloc>
+      <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1685,7 +1998,7 @@
     </remotesteps>
     <GUI>
       <xloc>1328</xloc>
-      <yloc>144</yloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1754,7 +2067,7 @@
         <hyperlinkField/>
       </field>
       <field>
-        <name>centre</name>
+        <name>nom_prenom</name>
         <type>None</type>
         <format/>
         <title/>
@@ -1766,10 +2079,46 @@
         <hyperlinkField/>
       </field>
       <field>
+        <name>centre</name>
+        <type>None</type>
+        <format/>
+        <title>Centre Reponse</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>type_programme</name>
+        <type>None</type>
+        <format/>
+        <title>Type Programme Reponse</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
         <name>centre_1</name>
         <type>None</type>
         <format/>
-        <title/>
+        <title>Centre Liste</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>type_programme_1</name>
+        <type>None</type>
+        <format/>
+        <title>Type Programme Liste</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -1825,7 +2174,7 @@
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <sheetname>Problem DA</sheetname>
+      <sheetname>Problem - DA Non Present</sheetname>
       <autosizecolums>N</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
@@ -2027,7 +2376,7 @@
     </remotesteps>
     <GUI>
       <xloc>704</xloc>
-      <yloc>416</yloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2061,7 +2410,7 @@
     </remotesteps>
     <GUI>
       <xloc>544</xloc>
-      <yloc>112</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2119,7 +2468,91 @@
     </remotesteps>
     <GUI>
       <xloc>912</xloc>
-      <yloc>112</yloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>numero_da</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Stream lookup</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>Dum</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>numero_da</name>
+        <field>numero_da</field>
+      </key>
+      <value>
+        <name>nombre_da</name>
+        <rename>nombre_da</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2233,14 +2666,14 @@
     </remotesteps>
     <GUI>
       <xloc>288</xloc>
-      <yloc>496</yloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Stream lookup</name>
-    <type>StreamLookup</type>
+    <name>Block 3 2 3</name>
+    <type>BlockUntilStepsFinish</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2249,23 +2682,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <from>Dum</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>numero_da</name>
-        <field>numero_da</field>
-      </key>
-      <value>
-        <name>nombre_da</name>
-        <rename>nombre_da</rename>
-        <default/>
-        <type>None</type>
-      </value>
-    </lookup>
+    <steps>
+      <step>
+        <name>Problem Centre</name>
+        <CopyNr>0</CopyNr>
+        </step>
+      </steps>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -2274,14 +2696,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>592</yloc>
+      <xloc>576</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Filter rows</name>
+    <name>Filtrer Diff Programme</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -2291,15 +2713,15 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Sort rows 2</send_true_to>
+<send_true_to>Block 3 2 3</send_true_to>
 <send_false_to/>
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>nombre_da</leftvalue>
- <function>&#x3e;</function>
- <rightvalue/>
- <value><name>constant</name><type>Integer</type><text>1</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;</mask></value> </condition>
+ <leftvalue>type_programme</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue>type_programme_1</rightvalue>
+ </condition>
     </compare>
     <cluster_schema/>
     <remotesteps>
@@ -2310,13 +2732,13 @@
     </remotesteps>
     <GUI>
       <xloc>432</xloc>
-      <yloc>592</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>DA - Dupliques avec ID</name>
+    <name>Problem Programme</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
@@ -2348,7 +2770,7 @@
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <sheetname>DA - Dupliques avec ID</sheetname>
+      <sheetname>Problem Programme</sheetname>
       <autosizecolums>N</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
@@ -2379,10 +2801,10 @@
         <hyperlinkField/>
       </field>
       <field>
-        <name>nombre_da</name>
+        <name>type_programme</name>
         <type>None</type>
         <format/>
-        <title/>
+        <title>Type Programme Reponse</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2391,22 +2813,10 @@
         <hyperlinkField/>
       </field>
       <field>
-        <name>nom_prenom</name>
+        <name>type_programme_1</name>
         <type>None</type>
         <format/>
-        <title/>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>centre</name>
-        <type>None</type>
-        <format/>
-        <title/>
+        <title>Type Programme Liste</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2423,14 +2833,269 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>592</yloc>
+      <xloc>704</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Block 4 2</name>
+    <name>Count</name>
+    <type>MemoryGroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <give_back_row>N</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>Nombre Erreur</aggregate>
+          <subject/>
+          <type>COUNT_ANY</type>
+          <valuefield/>
+        </field>
+      </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Type Erreur</name>
+        <type>String</type>
+        <format>50</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Problem - DA Non Present</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Count 2</name>
+    <type>MemoryGroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <give_back_row>N</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>Nombre Erreur</aggregate>
+          <subject/>
+          <type>COUNT_ANY</type>
+          <valuefield/>
+        </field>
+      </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Type Erreur</name>
+        <type>String</type>
+        <format>50</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Problem Centre ou Programme</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Count 3</name>
+    <type>MemoryGroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <give_back_row>N</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>Nombre Erreur</aggregate>
+          <subject/>
+          <type>COUNT_ANY</type>
+          <valuefield/>
+        </field>
+      </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>528</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Type Erreur</name>
+        <type>String</type>
+        <format>50</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Problem Nom</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>992</xloc>
+      <yloc>528</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Type Erreur</name>
+        <rename/>
+      </field>      <field>        <name>Nombre Erreur</name>
+        <rename/>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Block 2 2</name>
     <type>BlockUntilStepsFinish</type>
     <description/>
     <distribute>Y</distribute>
@@ -2442,7 +3107,7 @@
     </partitioning>
     <steps>
       <step>
-        <name>DA - Dupliques</name>
+        <name>DA - Dupliques avec ID</name>
         <CopyNr>0</CopyNr>
         </step>
       </steps>
@@ -2454,15 +3119,15 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>704</xloc>
-      <yloc>592</yloc>
+      <xloc>1264</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Sort rows 2</name>
-    <type>SortRows</type>
+    <name>Rapport Erreurs</name>
+    <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2471,21 +3136,120 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
+    <header>Y</header>
+    <footer>N</footer>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A1</startingCell>
+    <appendOmitHeader>N</appendOmitHeader>
+    <appendOffset>0</appendOffset>
+    <appendEmpty>0</appendEmpty>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <appendLines>N</appendLines>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x2f;home&#x2f;elmaster&#x2f;project&#x2f;ceremonie&#x2f;resultat</name>
+      <extention>xlsx</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Rapport Erreurs</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <stream_data>N</stream_data>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <protected_by/>
+      <splitevery>0</splitevery>
+      <if_file_exists>reuse</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <sheet_enabled>N</sheet_enabled>
+      <filename>template.xls</filename>
+      <sheetname/>
+      <hidden>N</hidden>
+    </template>
+    <fields>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1392</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Count 4</name>
+    <type>MemoryGroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <give_back_row>N</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>Nombre Erreur</aggregate>
+          <subject/>
+          <type>COUNT_ANY</type>
+          <valuefield/>
+        </field>
+      </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1072</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2 2 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
     <fields>
       <field>
-        <name>numero_da</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
+        <name>Type Erreur</name>
+        <type>String</type>
+        <format>50</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Problem - DA Dupliques</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
     <cluster_schema/>
@@ -2496,33 +3260,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Dum</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>688</xloc>
-      <yloc>496</yloc>
+      <xloc>1232</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
