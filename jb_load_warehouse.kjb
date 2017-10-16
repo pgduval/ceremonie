@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;10&#x2f;09 11&#x3a;14&#x3a;26.016</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;15 20&#x3a;48&#x3a;16.569</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;15 20&#x3a;52&#x3a;13.374</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -313,7 +313,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1120</xloc>
+      <xloc>1184</xloc>
       <yloc>448</yloc>
     </entry>
     <entry>
@@ -345,7 +345,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
+      <xloc>752</xloc>
       <yloc>64</yloc>
     </entry>
     <entry>
@@ -381,7 +381,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>992</xloc>
+      <xloc>1056</xloc>
       <yloc>64</yloc>
     </entry>
     <entry>
@@ -413,7 +413,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
+      <xloc>912</xloc>
       <yloc>64</yloc>
     </entry>
     <entry>
@@ -466,7 +466,7 @@
       <yloc>64</yloc>
     </entry>
     <entry>
-      <name>Verifier si Recu Mail</name>
+      <name>Verifier si Staging Exist</name>
       <description/>
       <type>FILES_EXIST</type>
       <filename/>
@@ -482,7 +482,7 @@
       <yloc>64</yloc>
     </entry>
     <entry>
-      <name>Move Files</name>
+      <name>Move Staging to Pilotage</name>
       <description/>
       <type>MOVE_FILES</type>
       <move_empty_folders>N</move_empty_folders>
@@ -519,7 +519,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>592</xloc>
       <yloc>64</yloc>
     </entry>
     <entry>
@@ -560,7 +560,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1120</xloc>
+      <xloc>1184</xloc>
       <yloc>192</yloc>
     </entry>
     <entry>
@@ -607,11 +607,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1120</xloc>
+      <xloc>1184</xloc>
       <yloc>64</yloc>
     </entry>
     <entry>
-      <name>Delete folders</name>
+      <name>Delete Staging</name>
       <description/>
       <type>DELETE_FOLDERS</type>
       <arg_from_previous>N</arg_from_previous>
@@ -625,7 +625,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1120</xloc>
+      <xloc>1184</xloc>
       <yloc>320</yloc>
     </entry>
   </entries>
@@ -659,7 +659,7 @@
     </hop>
     <hop>
       <from>Check Mails</from>
-      <to>Verifier si Recu Mail</to>
+      <to>Verifier si Staging Exist</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -667,8 +667,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Verifier si Recu Mail</from>
-      <to>Move Files</to>
+      <from>Verifier si Staging Exist</from>
+      <to>Move Staging to Pilotage</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -676,7 +676,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Move Files</from>
+      <from>Move Staging to Pilotage</from>
       <to>jb_lire_listes</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -685,7 +685,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Verifier si Recu Mail</from>
+      <from>Verifier si Staging Exist</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -713,7 +713,7 @@
     </hop>
     <hop>
       <from>Mail</from>
-      <to>Delete folders</to>
+      <to>Delete Staging</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -721,7 +721,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Delete folders</from>
+      <from>Delete Staging</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
