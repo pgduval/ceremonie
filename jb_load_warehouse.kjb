@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;10&#x2f;09 11&#x3a;14&#x3a;26.016</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;15 20&#x3a;52&#x3a;13.374</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;16 19&#x3a;51&#x3a;21.524</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -313,8 +313,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1184</xloc>
-      <yloc>448</yloc>
+      <xloc>1056</xloc>
+      <yloc>368</yloc>
     </entry>
     <entry>
       <name>jb_lire_listes</name>
@@ -426,7 +426,7 @@
       <usessl>Y</usessl>
       <sslport>995</sslport>
       <outputdirectory>&#x2f;home&#x2f;elmaster&#x2f;project&#x2f;ceremonie&#x2f;etl&#x2f;reponses&#x2f;pilotage&#x2f;staging</outputdirectory>
-      <filenamepattern>name_&#x7b;SYS&#x7c;hhmmss_MMddyyyy&#x7c;&#x7d;_&#x23;IdFile&#x23;.mail</filenamepattern>
+      <filenamepattern>mail.mail</filenamepattern>
       <retrievemails>0</retrievemails>
       <firstmails/>
       <delete>Y</delete>
@@ -472,7 +472,7 @@
       <filename/>
       <fields>
         <field>
-          <name>&#x2f;home&#x2f;elmaster&#x2f;project&#x2f;ceremonie&#x2f;etl&#x2f;reponses&#x2f;pilotage&#x2f;staging</name>
+          <name>&#x2f;home&#x2f;elmaster&#x2f;project&#x2f;ceremonie&#x2f;etl&#x2f;reponses&#x2f;pilotage&#x2f;staging&#x2f;mail.mail</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -528,7 +528,7 @@
       <type>MAIL</type>
       <server>smtp.gmail.com</server>
       <port>465</port>
-      <destination>phil.gduval&#x40;gmail.com</destination>
+      <destination>&#x24;&#x7b;SENDER&#x7d;</destination>
       <destinationCc/>
       <destinationBCc/>
       <replyto>mrsreceptionrobot&#x40;gmail.com</replyto>
@@ -560,8 +560,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1184</xloc>
-      <yloc>192</yloc>
+      <xloc>912</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>Abort job</name>
@@ -607,8 +607,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1184</xloc>
-      <yloc>64</yloc>
+      <xloc>752</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>Delete Staging</name>
@@ -625,8 +625,44 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1184</xloc>
-      <yloc>320</yloc>
+      <xloc>1056</xloc>
+      <yloc>224</yloc>
+    </entry>
+    <entry>
+      <name>tr_get_sender</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>tr_get_sender</transname>
+      <directory>&#x2f;</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>224</yloc>
     </entry>
   </entries>
   <hops>
@@ -694,24 +730,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>tr_validation</from>
-      <to>tr_get_results</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>tr_get_results</from>
-      <to>Mail</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Mail</from>
       <to>Delete Staging</to>
       <from_nr>0</from_nr>
@@ -723,6 +741,33 @@
     <hop>
       <from>Delete Staging</from>
       <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>tr_validation</from>
+      <to>tr_get_sender</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>tr_get_sender</from>
+      <to>tr_get_results</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>tr_get_results</from>
+      <to>Mail</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
