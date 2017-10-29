@@ -10,7 +10,7 @@
     <parameters>
       <parameter>
         <name>CENTRE</name>
-        <default_value/>
+        <default_value>Saint-Georges</default_value>
         <description/>
       </parameter>
     </parameters>
@@ -434,7 +434,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;10&#x2f;09 13&#x3a;31&#x3a;05.295</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;15 19&#x3a;52&#x3a;13.211</modified_date>
+    <modified_date>2017&#x2f;10&#x2f;29 12&#x3a;43&#x3a;18.861</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -483,12 +483,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Convertir Reponse 6</from>
-      <to>Drop Variables Inutiles</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Drop Variables Inutiles</from>
+      <from>Sel - Nettoyage</from>
       <to>Ecrire toute_reponses</to>
       <enabled>Y</enabled>
     </hop>
@@ -515,6 +510,56 @@
     <hop>
       <from>Ajouter Regulier</from>
       <to>Replace NUL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Convertir Reponse 6</from>
+      <to>SLook - Ajouter Corrections</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CSVIn - Lire Corrections</from>
+      <to>SLook - Ajouter Corrections</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SLook - Ajouter Corrections</from>
+      <to>Switch &#x2f; Case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Appliquer Correction</from>
+      <to>Calc - Set Correct DA</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calc - Set Correct DA</from>
+      <to>Sel - Reorder</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sel - Reorder</from>
+      <to>Sel - Nettoyage</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch &#x2f; Case</from>
+      <to>Correction&#x3f; -  Non</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Correction&#x3f; -  Non</from>
+      <to>Sel - Nettoyage</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Switch &#x2f; Case</from>
+      <to>Correction&#x3f; -  Oui</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Correction&#x3f; -  Oui</from>
+      <to>Appliquer Correction</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -759,6 +804,98 @@
     <GUI>
       <xloc>848</xloc>
       <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sel - Nettoyage</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>Formulaire &#x23;</name>
+      </remove>      <remove>        <name>No de confirmation</name>
+      </remove>      <remove>        <name>Code de frais</name>
+      </remove>      <remove>        <name>Question 2&#x3a; Nom du dipl&#xf4;m&#xe9;</name>
+      </remove>      <remove>        <name>Question 3&#x3a; Pr&#xe9;nom du dipl&#xf4;m&#xe9;</name>
+      </remove>      <remove>        <name>Question 4&#x3a; Programme d&#x27;&#xe9;tudes</name>
+      </remove>      <remove>        <name>Question 5&#x3a; Je serai pr&#xe9;sent &#xe0; la c&#xe9;r&#xe9;monie</name>
+      </remove>      <remove>        <name>Question 6&#x3a; Nombre de personnes qui m&#x27;accompagneront</name>
+      </remove>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>828</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Ecrire toute_reponses</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>Y</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x2f;home&#x2f;elmaster&#x2f;project&#x2f;ceremonie&#x2f;etl&#x2f;reponses&#x2f;pilotage&#x2f;toute_responses</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>csv</extention>
+      <append>Y</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1212,7 +1349,145 @@
     </step>
 
   <step>
-    <name>Drop Variables Inutiles</name>
+    <name>SLook - Ajouter Corrections</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>CSVIn - Lire Corrections</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>Question 1&#x3a; Num&#xe9;ro de demande d&#x27;admission au C&#xe9;gep &#x28;&#x23;DA - 7 chiffres&#x29;</name>
+        <field>reponse_da</field>
+      </key>
+      <value>
+        <name>correction_da</name>
+        <rename>correction_da</rename>
+        <default>-1</default>
+        <type>String</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>CSVIn - Lire Corrections</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>&#x2f;home&#x2f;elmaster&#x2f;project&#x2f;ceremonie&#x2f;etl&#x2f;reponses&#x2f;pilotage&#x2f;corrections.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>N</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding/>
+    <fields>
+      <field>
+        <name>reponse_da</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>correction_da</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Switch &#x2f; Case</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<fieldname>correction_da</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>String</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step>Correction&#x3f; -  Oui</default_target_step>
+<cases><case><value>-1</value>
+<target_step>Correction&#x3f; -  Non</target_step>
+</case></cases>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Appliquer Correction</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -1223,14 +1498,7 @@
       <schema_name/>
     </partitioning>
     <fields>        <select_unspecified>N</select_unspecified>
-      <remove>        <name>Formulaire &#x23;</name>
-      </remove>      <remove>        <name>No de confirmation</name>
-      </remove>      <remove>        <name>Code de frais</name>
-      </remove>      <remove>        <name>Question 2&#x3a; Nom du dipl&#xf4;m&#xe9;</name>
-      </remove>      <remove>        <name>Question 3&#x3a; Pr&#xe9;nom du dipl&#xf4;m&#xe9;</name>
-      </remove>      <remove>        <name>Question 4&#x3a; Programme d&#x27;&#xe9;tudes</name>
-      </remove>      <remove>        <name>Question 5&#x3a; Je serai pr&#xe9;sent &#xe0; la c&#xe9;r&#xe9;monie</name>
-      </remove>      <remove>        <name>Question 6&#x3a; Nombre de personnes qui m&#x27;accompagneront</name>
+      <remove>        <name>Question 1&#x3a; Num&#xe9;ro de demande d&#x27;admission au C&#xe9;gep &#x28;&#x23;DA - 7 chiffres&#x29;</name>
       </remove>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
@@ -1239,15 +1507,15 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1184</xloc>
-      <yloc>208</yloc>
+      <xloc>1344</xloc>
+      <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Ecrire toute_reponses</name>
-    <type>TextFileOutput</type>
+    <name>Calc - Set Correct DA</name>
+    <type>Calculator</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1256,39 +1524,21 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>&#x3b;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_forced>Y</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>&#x2f;home&#x2f;elmaster&#x2f;project&#x2f;ceremonie&#x2f;etl&#x2f;reponses&#x2f;pilotage&#x2f;toute_responses</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>csv</extention>
-      <append>Y</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-    </fields>
+    <calculation>
+      <field_name>Question 1&#x3a; Num&#xe9;ro de demande d&#x27;admission au C&#xe9;gep &#x28;&#x23;DA - 7 chiffres&#x29;</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>correction_da</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>15</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1297,8 +1547,118 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1184</xloc>
-      <yloc>352</yloc>
+      <xloc>1172</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sel - Reorder</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Formulaire &#x23;</name>
+        <rename/>
+      </field>      <field>        <name>No de confirmation</name>
+        <rename/>
+      </field>      <field>        <name>Nb d&#x27;inscription</name>
+        <rename/>
+      </field>      <field>        <name>Code de frais</name>
+        <rename/>
+      </field>      <field>        <name>Montant &#x28;&#x24;&#x29;</name>
+        <rename/>
+      </field>      <field>        <name>Question 1&#x3a; Num&#xe9;ro de demande d&#x27;admission au C&#xe9;gep &#x28;&#x23;DA - 7 chiffres&#x29;</name>
+        <rename/>
+      </field>      <field>        <name>Question 2&#x3a; Nom du dipl&#xf4;m&#xe9;</name>
+        <rename/>
+      </field>      <field>        <name>Question 3&#x3a; Pr&#xe9;nom du dipl&#xf4;m&#xe9;</name>
+        <rename/>
+      </field>      <field>        <name>Question 4&#x3a; Programme d&#x27;&#xe9;tudes</name>
+        <rename/>
+      </field>      <field>        <name>Question 5&#x3a; Je serai pr&#xe9;sent &#xe0; la c&#xe9;r&#xe9;monie</name>
+        <rename/>
+      </field>      <field>        <name>Question 6&#x3a; Nombre de personnes qui m&#x27;accompagneront</name>
+        <rename/>
+      </field>      <field>        <name>Type Liste</name>
+        <rename/>
+      </field>      <field>        <name>CENTRE</name>
+        <rename/>
+      </field>      <field>        <name>Nom - Prenom</name>
+        <rename/>
+      </field>      <field>        <name>present</name>
+        <rename/>
+      </field>      <field>        <name>invite</name>
+        <rename/>
+      </field>      <field>        <name>correction_da</name>
+        <rename/>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1000</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Correction&#x3f; -  Non</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1056</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Correction&#x3f; -  Oui</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1264</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
